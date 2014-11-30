@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="#/acorns" style="text-decoration: none;">
+                <span><</span>
+                <span style="margin-left: 10px;">back</span>
+            </a>
+            <a class="pull-right"
+               href="/acorn/{{userName}}/{{currentAcorn}}/index.html"
+               target="_blank">see it!
+                <span class="pull-right glyphicon glyphicon-hand-right" style="margin-left:10px;"></span>
+            </a>
+        </div>
+        <div class="col-sm-12">
+            <h1 class="col-center-block">
+                {{currentAcorn}}
+            </h1>
+        </div>
+    </div>
+
+    <div class="row col-sm-12">
+        <div class="col-sm-2">
+
+            <div class="panel panel-default panel-acorn">
+                <div class="panel-body" id="editAccordion">
+                    <accordion close-others="false">
+                        <accordion-group is-open="accordionStatus.html">
+                            <accordion-heading>
+                                <span style="cursor:pointer;">HTML</span>
+                                <i class="pull-right glyphicon"
+                                   style="cursor:pointer;"
+                                   ng-class="{'glyphicon-chevron-down': accordionStatus.html, 'glyphicon-chevron-right': !accordionStatus.html}"></i>
+                            </accordion-heading>
+                            <ul class="list-group" style="margin-bottom:0px">
+                                <li class="list-group-item"
+                                    ng-repeat="file in files | filter:{fileType: 'html'}"
+                                    ng-click="selectFile(file)"
+                                    style="cursor:pointer;">
+                                    <span class="pull-left glyphicon glyphicon-file" aria-hidden="true"></span>
+                                    <span class="file-name">
+                                        {{file.fileName}}
+                                    </span>
+                                </li>
+                            </ul>
+                        </accordion-group>
+                        <accordion-group is-open="accordionStatus.css">
+                            <accordion-heading style="cursor:pointer;">
+                                <span style="cursor:pointer;">CSS</span>
+                                <i class="pull-right glyphicon"
+                                   style="cursor:pointer;"
+                                   ng-class="{'glyphicon-chevron-down': accordionStatus.css, 'glyphicon-chevron-right': !accordionStatus.css}"></i>
+                            </accordion-heading>
+                            <ul class="list-group" style="margin-bottom:0px">
+                                <li class="list-group-item"
+                                    ng-repeat="file in files | filter:{fileType: 'css'}"
+                                    ng-click="selectFile(file)"
+                                    style="cursor:pointer;">
+                                    <span class="pull-left glyphicon glyphicon-file" aria-hidden="true"></span>
+                                    <span class="file-name">
+                                        {{file.fileName}}
+                                    </span>
+                                </li>
+                            </ul>
+                        </accordion-group>
+                        <accordion-group is-open="accordionStatus.js">
+                            <accordion-heading style="cursor:pointer;">
+                                <span style="cursor:pointer;">JavaScript</span>
+                                <i class="pull-right glyphicon"
+                                   style="cursor:pointer;"
+                                   ng-class="{'glyphicon-chevron-down': accordionStatus.js, 'glyphicon-chevron-right': !accordionStatus.js}"></i>
+                            </accordion-heading>
+                            <ul class="list-group" style="margin-bottom:0px">
+                                <li class="list-group-item"
+                                    ng-repeat="file in files | filter:{fileType: 'js'}"
+                                    ng-click="selectFile(file)"
+                                    style="cursor:pointer;">
+                                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                                        <span class="file-name">
+                                            {{file.fileName}}
+                                        </span>
+                                </li>
+                            </ul>
+                        </accordion-group>
+                    </accordion>
+                </div>
+            </div>
+            <div ng-click="addFile('js')" style="border:none; margin-top:10px; padding-left:15px;">
+                <span class="pull-left glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span style="padding-left:7px;">new</span>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="border-bottom:1px solid #808080">
+                    <span>{{fileName}}</span>
+                    <span ng-show="unsaved" class="fadeout">{{saveMessage}}</span>
+                </div>
+                <div class="panel-body" style="padding:0px;">
+                    <div ui-ace="{
+                                    useWrapMode: true,
+                                    onChange: aceChanged,
+                                    onLoad: aceLoaded
+                                }"
+                         ng-model="foobar" class="ace-editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

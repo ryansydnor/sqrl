@@ -1,0 +1,107 @@
+@import "../lib/bootstrap/less/bootstrap.less";
+@import "variables.less";
+@import (less) "../lib/angular-loading-bar/build/loading-bar.css";
+@import (less) "../lib/AngularJS-Toaster/toaster.css";
+
+@icon-font-path: "../../../img/";
+
+.panel{
+  border-radius: 5px;
+}
+
+.ace-editor{
+  height:400px;
+}
+
+.navbar{
+  background-color:#CC2614;
+}
+
+.ace_print-margin{
+  display:none !important;
+}
+
+.col-center-block {
+  float: none !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+.panel-acorn{
+  margin-bottom:0px;
+}
+
+#editAccordion{
+  padding:0px;
+}
+
+.panel{
+  border:none;
+}
+
+#editAccordion .panel-group{
+  margin-bottom:0px;
+}
+
+#editAccordion .panel-body{
+  padding:0px;
+  border:none;
+}
+
+#editAccordion .list-group-item{
+  border:none;
+}
+
+.file-name{
+  padding-left:2px;
+  word-wrap:break-word;
+}
+
+.fadeout {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s;
+}
+
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeout.ng-hide-add {
+  opacity: 1;
+}
+
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -40px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  padding: 10px 10px 0 10px;
+  text-align: center;
+}
+#footer {
+  background-color: @color-red;
+  color: #fff;
+  font-size: 14px;
+}

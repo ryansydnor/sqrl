@@ -1,0 +1,5 @@
+local/
+bin/
+*.pyc
+node_modules/
+bower_components/
